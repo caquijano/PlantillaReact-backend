@@ -3,6 +3,6 @@ import './database'
 
 const PORT = process.env.PORT || '4000'
 
-app.listen(PORT, function (){
-    console.log('server port'+PORT)
+app.listen(PORT,()=>{
+    console.log('server port 4000')
 })
