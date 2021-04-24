@@ -33,6 +33,6 @@ export const createAdmin = async () => {
           });
           const savedUser = await userAdmin.save();
     } catch (error) {
-        console.error(error)
+
     }
 }

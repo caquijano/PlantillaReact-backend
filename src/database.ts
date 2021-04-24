@@ -9,7 +9,6 @@ import config from './config'
     });
     console.log('database is connected to: ', db.connection.name)
     } catch (error) {
-        console.error(error)
     }
     
 })( )

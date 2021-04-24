@@ -72,13 +72,10 @@ export const loginUser: RequestHandler = async (req: Request, res: Response) => 
     
     const userFound: any = await User.findOne({ email });
     if (!userFound) {
-      console.log("usuario no encontrado")
       return res.sendStatus(204);
     } else {
-      console.log(userFound)
       const isPassCorrect = await bcrypt.compare(password, userFound.password);
       if (!isPassCorrect) {
-        console.log("usuario no encontrado")
        // return res.status(400).json({ message: "Invalid credentials" });
        res.status(204).json({
         token: null,
@@ -105,7 +102,6 @@ export const loginUser: RequestHandler = async (req: Request, res: Response) => 
 export const getUser: RequestHandler = async (req: Request, res: Response) => {
   const users = await User.findById(req.params.id);
   try {
-    console.log(users);
     return res.json(users);
   } catch (error) {
     return res.json(error);
@@ -125,7 +121,6 @@ export const sendEmail: RequestHandler = async (
   req: Request,
   res: Response
 ) => {
-  console.log(req.body.user.name)
   const cod = JSON.stringify(req.body.random) ;
   const codigo = cod.replace(/[^a-zA-Z0-9]/g, '')
   const contentHTML = `
@@ -156,7 +151,6 @@ export const sendEmail: RequestHandler = async (
 
          res.status(500).json(error.message)
       } else {
-          console.log("email enviado");
           res.status(200).jsonp(req.body)
       }
   })
@@ -169,14 +163,4 @@ export const deleteUsers: RequestHandler = async (req, res) => {
     return res.json({ message: "User Deleted..." });
   }
 };
-export const updateUser: RequestHandler = async (req, res) => {
-  const userUpdate = await User.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
-  if (!userUpdate) {
-    console.log("error");
-    return res.status(204).json({ message: " resource not found..." });
-  } else {
-    return res.json({ message: "User Updated..." });
-  }
-};
+

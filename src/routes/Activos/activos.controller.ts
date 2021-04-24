@@ -36,15 +36,3 @@ export const deleteActivos: RequestHandler = async (req, res) => {
         return res.json({ message: "activo Deleted..." });
     }
 };
-export const updateActivos: RequestHandler = async (req, res) => {
-    const activoUpdate = await Activo.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-    });
-    if (!activoUpdate) {
-        console.log("error")
-        return res.status(204).json({ message: " resource not found..." });
-        
-    } else {
-        return res.json({ message: "activo Updated..." });
-    }
-};
