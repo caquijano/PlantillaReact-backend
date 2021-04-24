@@ -12,7 +12,7 @@ router.get('/users/:id', userController.getUser);
 
 router.post('/users', verifySignup.checkDuplicateUsernameOrEmail, userController.createUser);
 
-router.post('/send-email', userController.sendEmail);
+//router.post('/send-email', userController.sendEmail);
 
 router.delete('/users/:id/:token', auth.verifyToken,auth.isAdmin, userController.deleteUsers);
 

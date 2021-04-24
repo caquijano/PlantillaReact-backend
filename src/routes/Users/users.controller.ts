@@ -4,8 +4,8 @@ import User from "./User";
 import Role from "../Roles/Role";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import nodemailer from "nodemailer";
-import smtpTransport from "nodemailer-smtp-transport";
+//import nodemailer from "nodemailer";
+//import smtpTransport from "nodemailer-smtp-transport";
 
 
 export const createUser: RequestHandler = async (
@@ -117,7 +117,7 @@ export const getUsers: RequestHandler = async (req: Request, res: Response) => {
   }
 };
 
-export const sendEmail: RequestHandler = async (
+/*export const sendEmail: RequestHandler = async (
   req: Request,
   res: Response
 ) => {
@@ -154,7 +154,7 @@ export const sendEmail: RequestHandler = async (
           res.status(200).jsonp(req.body)
       }
   })
-};
+};*/
 export const deleteUsers: RequestHandler = async (req, res) => {
   const userDelete = await User.findByIdAndDelete(req.params.id);
   if (!userDelete) {

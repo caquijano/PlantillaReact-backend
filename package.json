@@ -18,8 +18,6 @@
     "@types/mongoose": "^5.10.5",
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.41",
-    "@types/nodemailer": "^6.4.1",
-    "@types/nodemailer-smtp-transport": "^2.7.4",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -27,8 +25,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.18",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.5.0",
-    "nodemailer-smtp-transport": "^2.7.4",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.4"
   }
