@@ -9,7 +9,7 @@ export interface UserInterface extends Document {
     photo?: string;
     phone: string;
     password: string;
-    roles: string[];
+    roles: string[2];
     created_at: Date;
     updated_at: Date; 
   }
