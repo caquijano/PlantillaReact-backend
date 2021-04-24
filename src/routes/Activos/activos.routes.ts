@@ -12,6 +12,5 @@ router.post('/activos', auth.verifyToken, activoController.createActivo);
 
 router.delete('/activos/:id/:token', auth.verifyToken, auth.isAdmin, activoController.deleteActivos);
 
-router.put('/activos/:id', auth.verifyToken, auth.isAdmin, activoController.updateActivos);
 
 export default router
